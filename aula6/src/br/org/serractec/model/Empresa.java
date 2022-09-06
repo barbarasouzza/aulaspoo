@@ -1,0 +1,38 @@
+package br.org.serractec.model;
+
+public class Empresa implements Tributacao {
+	private String razaoSocial;
+	private Double rendimentos;
+	
+	public Empresa(String razaoSocial, Double rendimentos) {
+		super();
+		this.razaoSocial = razaoSocial;
+		this.rendimentos = rendimentos;
+	}
+	
+	@Override
+	public String toString() {
+		return "Empresa [razaoSocial=" + razaoSocial + ", rendimentos=" + rendimentos + "]";
+	}	
+
+	public String getRazaoSocial() {
+		return razaoSocial;
+	}
+
+	public Double getRendimentos() {
+		return rendimentos;
+	}
+
+	@Override
+	public Double calcularICMS() {
+		// TODO Auto-generated method stub
+		return rendimentos * icms;
+	}
+
+	@Override
+	public Double calcularImpostoDeRenda() {
+		// TODO Auto-generated method stub
+		return rendimentos * impostoDeRendaPJ;
+	}
+
+}
